@@ -45,21 +45,22 @@ export default function App() {
   }, [intervalId]);
 
   return (
-    <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={toggleTimer}>
+    <TouchableWithoutFeedback onPress={toggleTimer}>
+      <View style={styles.container}>
         <View style={styles.timerContainer}>
           <Text style={styles.timerText}>{formatTime(time)}</Text>
           <Text style={styles.infoText}>
             Tap anywhere to {isRunning ? 'stop' : 'start'} the timer
           </Text>
         </View>
-      </TouchableWithoutFeedback>
-
-      <TouchableOpacity onPress={resetTimer} style={styles.resetButton}>
-        <Text style={styles.resetButtonText}>Reset Timer</Text>
-      </TouchableOpacity>
-    </View>
+  
+        <TouchableOpacity onPress={resetTimer} style={styles.resetButton}>
+          <Text style={styles.resetButtonText}>Reset Timer</Text>
+        </TouchableOpacity>
+      </View>
+    </TouchableWithoutFeedback>
   );
+  
 }
 
 const styles = StyleSheet.create({
